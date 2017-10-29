@@ -1,0 +1,79 @@
+#popup_container {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	/*
+	min-width: 300px; 
+	max-width: 600px; 
+	*/
+	/* 모바일용으로 작아야하므로 */
+	min-width: 250px; /* Dialog will be no smaller than this */
+	max-width: 250px; /* Dialog will wrap after this width */
+	background: #FFF;
+	border: solid 5px #999;
+	color: #000;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	text-shadow:none; /* jquerymobile dialog 에서 shadow를 사용해서 텍스트가 겹쳐보여서 제거 */
+}
+
+#popup_title {
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 1.75em;
+	color: #666;
+	background: #CCC url(../img/alerts_title.gif) top repeat-x;
+	border: solid 1px #FFF;
+	border-bottom: solid 1px #999;
+	cursor: default;
+	padding: 0em;
+	margin: 0em;
+}
+
+#popup_content {
+	background: 16px 16px no-repeat url(../img/alerts_info.gif);
+	padding: 1em 1.75em;
+	margin: 0em;
+}
+
+#popup_content.alert {
+	background-image: url(../img/alerts_info.gif);
+}
+
+#popup_content.confirm {
+	background-image: url(../img/alerts_important.gif);
+}
+
+#popup_content.prompt {
+	background-image: url(../img/alerts_help.gif);
+}
+
+#popup_message {
+	padding-left: 48px;
+}
+
+#popup_panel {
+	text-align: center;
+	margin: 1em 0em 0em 1em;
+}
+
+#popup_prompt {
+	margin: .5em 0em;
+}
+
+/* 2011.11.26 KangMin */
+#popup_ok, #popup_cancel {
+	height: 30px;
+	border: solid 1px #000000;
+}
+
+/* 2011.11.26 KangMin */
+#popup_ok {
+	width: 50px;
+}
+
+/* 2011.11.26 KangMin */
+#popup_cancel {
+	width: 70px;
+}
