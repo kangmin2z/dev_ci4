@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>CodeIgniter4 코딩 공작소</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <link rel="icon" href="./assets/img/favicon.ico" />
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/plugins/font-awesome-4.5.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./assets/plugins/ionicons-2.0.1/css/ionicons.min.css" />
+    <link rel="stylesheet" href="./assets/css/AdminLTE.min.css" />
+    <link rel="stylesheet" href="./assets/css/skins/_all-skins.min.css" />
+    <link rel="stylesheet" href="./assets/plugins/bootstrap-tagsinput-latest/bootstrap-tagsinput.css" />
+    <link rel="stylesheet" href="./assets/plugins/iCheck/square/blue.css" />
+	<script src="./assets/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="./assets/js/html5shiv.min.js"></script>
+    <script src="./assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+    <!-- 헤더 -->
+    <header class="main-header">
+        <!-- 로고 -->
+        <a href="./note.html" class="logo">
+            <span class="logo-mini"><b>CI</b>4</span>
+            <span class="logo-lg"><b>CodeIgniter</b>4</span>
+        </a>
+        <!-- // 로고 -->
+        <!-- 상단 네이게이션 -->
+        <nav class="navbar navbar-static-top">
+            <!-- 왼쪽 사이드바 토글 -->
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <!-- // 왼쪽 사이드바 토글 -->
+        </nav>
+        <!-- // 상단 네비게이션 -->
+    </header>
+    <!-- // 헤더 -->
+
+    <!-- 왼쪽 사이드바 -->
+    <aside class="main-sidebar">
+        <section class="sidebar">
+            <!-- 회원 -->
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img src="./assets/img/ci_logo_160x160.png" class="img-circle" alt="User Image" />
+                </div>
+                <div class="pull-left info">
+                    <p>xxx님</p>
+                    <a href="./userInfoModify.html"><i class="fa fa-circle text-green"></i> Modify</a>
+                    <a href="#"><i class="fa fa-circle text-danger"></i> Logout</a>
+                </div>
+            </div>
+            <!-- // 회원 -->
+            <!-- 검색 -->
+            <form action="#" method="get" class="sidebar-form">
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control" placeholder="검색..." />
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-flat"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
+            </form>
+            <!-- // 검색 -->
+            <!-- 메뉴 -->
+            <ul class="sidebar-menu">
+                <li class="active">
+                    <a href="./note.html">
+                        <i class="fa fa-book"></i> <span>내 노트</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#tagModal">
+                        <i class="fa fa-tags"></i> <span>태그</span>
+                    </a>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-folder-open"></i> <span>폴더</span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="./folder.html"><i class="fa fa-gears"></i> 폴더 관리</a></li>
+                        <li><a href="./note.html?folder=1"><i class="fa fa-folder-open-o"></i> PHP</a></li>
+                        <li><a href="./note.html?folder=2"><i class="fa fa-folder-open-o"></i> Javascript</a></li>
+                        <li><a href="./note.html?folder=3"><i class="fa fa-folder-open-o"></i> CSS</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="./trash.html">
+                        <i class="fa fa-trash"></i> <span>휴지통</span>
+                    </a>
+                </li>
+            </ul>
+            <!-- // 메뉴 -->
+        </section>
+    </aside>
+    <!-- // 왼쪽 사이드바 -->
+
+	<!-- 태그 검색 모달 -->
+	<div class="modal modal-info" id="tagModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">등록된 태그</h4>
+				</div>
+				<div class="modal-body">
+					<!-- 데이터 없을 때 -->
+					<div class="alert alert-dismissible bg-gray">
+						<h4><i class="icon fa fa-info"></i> None</h4>
+						데이터가 존재하지 않습니다.
+					</div>
+					<!-- // 데이터 없을 때 -->
+					<p>
+						<a href="./note.html?search=#태그" class="btn btn-warning btn-xs">#태그</a>
+						<a href="./note.html?search=#태그#태그" class="btn btn-warning btn-xs">#태그#태그</a>
+						<a href="./note.html?search=#태그" class="btn btn-warning btn-xs">#태그</a>
+						<a href="./note.html?search=#태그#태그" class="btn btn-warning btn-xs">#태그#태그</a>
+						<a href="./note.html?search=#태그" class="btn btn-warning btn-xs">#태그</a>
+						<a href="./note.html?search=#태그#태그" class="btn btn-warning btn-xs">#태그#태그</a>
+						<a href="./note.html?search=#태그" class="btn btn-warning btn-xs">#태그</a>
+						<a href="./note.html?search=#태그#태그" class="btn btn-warning btn-xs">#태그#태그</a>
+						<a href="./note.html?search=#태그" class="btn btn-warning btn-xs">#태그</a>
+						<a href="./note.html?search=#태그#태그" class="btn btn-warning btn-xs">#태그#태그</a>
+						<a href="./note.html?search=#태그" class="btn btn-warning btn-xs">#태그</a>
+						<a href="./note.html?search=#태그#태그" class="btn btn-warning btn-xs">#태그#태그</a>
+						<a href="./note.html?search=#태그" class="btn btn-warning btn-xs">#태그</a>
+						<a href="./note.html?search=#태그#태그" class="btn btn-warning btn-xs">#태그#태그</a>
+						<a href="./note.html?search=#태그" class="btn btn-warning btn-xs">#태그</a>
+						<a href="./note.html?search=#태그#태그" class="btn btn-warning btn-xs">#태그#태그</a>
+						<a href="./note.html?search=#태그" class="btn btn-warning btn-xs">#태그</a>
+					</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-outline" data-dismiss="modal">닫기</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- // 태그 검색 모달 -->
+
+    <!-- 콘텐츠 -->
+    <div class="content-wrapper">
+        <!-- 타이틀 -->
+        <section class="content-header">
+            <h1>내 노트 <span class="badge bg-green">36</span></h1>
+        </section>
+        <!-- // 타이틀 -->
+        <!-- 검색된 태그 -->
+        <section class="content-header">
+            <span class="label label-warning btn-xs">#태그</span>
+        </section>
+        <!-- // 검색된 태그 -->
+        <!-- 리스트 -->
+        <section class="content">
+            <!-- 데이터 없을 때 -->
+            <div class="alert alert-dismissible bg-gray">
+                <h4><i class="icon fa fa-info"></i> None</h4>
+                데이터가 존재하지 않습니다.
+            </div>
+            <!-- // 데이터 없을 때 -->
+            <!-- Row -->
+            <div class="box">
+                <div class="box-header with-border">
+                    <span class="small text-blue"><i class="fa fa-folder-o"></i> 폴더<br /></span>
+                    <h3 class="box-title">제목제목제목</h3>
+                    <!-- 접기 / 수정 / 삭제 버튼 -->
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="토글"><i class="fa fa-minus"></i></button>
+                        <a href="./noteEdit.html" class="btn btn-box-tool" data-toggle="tooltip" title="수정"><i class="fa fa-pencil-square-o"></i></a>
+                        <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="삭제"><i class="fa fa-times"></i></button>
+                    </div>
+                    <!-- // 접기 / 수정 / 삭제 버튼 -->
+                </div>
+                <div class="box-body">
+                    내용내용내용<br />
+                    내용내용내용<br />
+                    내용내용내용<br />
+                    내용내용내용<br />
+                    내용내용내용
+                </div>
+                <div class="box-footer">
+                    <i class="fa fa-floppy-o"></i> <a href="#">파일.zip</a><br />
+                    <i class="fa fa-floppy-o"></i> <a href="#">이미지.png</a>
+                </div>
+                <div class="box-footer">
+                    <i class="fa fa-tags"></i> <a href="./note.html?search=#태그" class="btn btn-warning btn-xs">#태그</a> <a href="./note.html?search=#태그" class="btn btn-warning btn-xs">#태그</a> <a href="./note.html?search=#태그" class="btn btn-warning btn-xs">#태그</a>
+                </div>
+                <div class="box-footer">
+                    수정 2017-02-02 | 작성 2017-01-01
+                </div>
+            </div>
+            <!-- // Row -->
+			<!-- Row -->
+            <div class="box">
+                <div class="box-header with-border">
+                    <span class="small text-blue"><i class="fa fa-folder-o"></i> 폴더<br /></span>
+					<h3 class="box-title">제목제목제목</h3>
+                    <!-- 접기 / 수정 / 삭제 버튼 -->
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="토글"><i class="fa fa-minus"></i></button>
+                        <a href="./noteEdit.html" class="btn btn-box-tool" data-toggle="tooltip" title="수정"><i class="fa fa-pencil-square-o"></i></a>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="삭제"><i class="fa fa-times"></i></button>
+                    </div>
+                    <!-- // 접기 / 수정 / 삭제 버튼 -->
+                </div>
+                <div class="box-body">
+                    내용내용내용<br />
+                    내용내용내용<br />
+                    내용내용내용<br />
+                    내용내용내용<br />
+                    내용내용내용
+                </div>
+                <div class="box-footer">
+                    <i class="fa fa-floppy-o"></i> <a href="#">파일.zip</a><br />
+                    <i class="fa fa-floppy-o"></i> <a href="#">이미지.png</a>
+                </div>
+                <div class="box-footer">
+                    <i class="fa fa-tags"></i> <a href="./note.html?search=#태그" class="btn btn-warning btn-xs">#태그</a> <a href="./note.html?search=#태그" class="btn btn-warning btn-xs">#태그</a> <a href="./note.html?search=#태그" class="btn btn-warning btn-xs">#태그</a>
+                </div>
+                <div class="box-footer">
+                    수정 2017-02-02 | 작성 2017-01-01
+                </div>
+            </div>
+            <!-- // Row -->			
+			<!-- Row -->
+            <div class="box">
+                <div class="box-header with-border">
+                    <span class="small text-blue"><i class="fa fa-folder-o"></i> 폴더<br /></span>
+					<h3 class="box-title">제목제목제목</h3>
+                    <!-- 접기 / 수정 / 삭제 버튼 -->
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="토글"><i class="fa fa-minus"></i></button>
+                        <a href="./noteEdit.html" class="btn btn-box-tool" data-toggle="tooltip" title="수정"><i class="fa fa-pencil-square-o"></i></a>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="삭제"><i class="fa fa-times"></i></button>
+                    </div>
+                    <!-- // 접기 / 수정 / 삭제 버튼 -->
+                </div>
+                <div class="box-body">
+                    내용내용내용<br />
+                    내용내용내용<br />
+                    내용내용내용<br />
+                    내용내용내용<br />
+                    내용내용내용
+                </div>
+                <div class="box-footer">
+                    <i class="fa fa-floppy-o"></i> <a href="#">파일.zip</a><br />
+                    <i class="fa fa-floppy-o"></i> <a href="#">이미지.png</a>
+                </div>
+                <div class="box-footer">
+                    <i class="fa fa-tags"></i> <a href="./note.html?search=#태그" class="btn btn-warning btn-xs">#태그</a> <a href="./note.html?search=#태그" class="btn btn-warning btn-xs">#태그</a> <a href="./note.html?search=#태그" class="btn btn-warning btn-xs">#태그</a>
+                </div>
+                <div class="box-footer">
+                    수정 2017-02-02 | 작성 2017-01-01
+                </div>
+            </div>
+            <!-- // Row -->		
+			<!-- Row -->
+            <div class="box">
+                <div class="box-header with-border">
+                    <span class="small text-blue"><i class="fa fa-folder-o"></i> 폴더<br /></span>
+					<h3 class="box-title">제목제목제목</h3>
+                    <!-- 접기 / 수정 / 삭제 버튼 -->
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="토글"><i class="fa fa-minus"></i></button>
+                        <a href="./noteEdit.html" class="btn btn-box-tool" data-toggle="tooltip" title="수정"><i class="fa fa-pencil-square-o"></i></a>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="삭제"><i class="fa fa-times"></i></button>
+                    </div>
+                    <!-- // 접기 / 수정 / 삭제 버튼 -->
+                </div>
+                <div class="box-body">
+                    내용내용내용<br />
+                    내용내용내용<br />
+                    내용내용내용<br />
+                    내용내용내용<br />
+                    내용내용내용
+                </div>
+                <div class="box-footer">
+                    <i class="fa fa-floppy-o"></i> <a href="#">파일.zip</a><br />
+                    <i class="fa fa-floppy-o"></i> <a href="#">이미지.png</a>
+                </div>
+                <div class="box-footer">
+                    <i class="fa fa-tags"></i> <a href="./note.html?search=#태그" class="btn btn-warning btn-xs">#태그</a> <a href="./note.html?search=#태그" class="btn btn-warning btn-xs">#태그</a> <a href="./note.html?search=#태그" class="btn btn-warning btn-xs">#태그</a>
+                </div>
+                <div class="box-footer">
+                    수정 2017-02-02 | 작성 2017-01-01
+                </div>
+            </div>
+            <!-- // Row -->					
+            <!-- 등록버튼 / 페이징 -->
+            <div class="box-footer clearfix">
+                <a href="./noteWrite.html" class="btn btn-success pull-left"><i class="fa fa-pencil-square-o"></i> 등록</a>
+                <ul class="pagination pagination-sm no-margin pull-right">
+                    <li><a href="#"><<</a></li>
+                    <li><a href="#"><</a></li>
+                    <li><a href="#">1</a></li>
+                    <li class="active"><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">></a></li>
+                    <li><a href="#">>></a></li>
+                </ul>
+            </div>
+            <!-- // 등록버튼 / 페이징 -->
+        </section>
+        <!-- // 리스트 -->
+    </div>
+    <!-- // 콘텐츠 -->
+
+    <!-- 푸터 -->
+    <footer class="main-footer">
+        <strong>&copy; CodeIgniter4 코딩 공작소.</strong>
+    </footer>
+    <!-- // 푸터 -->
+
+    <div class="control-sidebar-bg"></div>
+</div>
+	
+<script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="./assets/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="./assets/plugins/fastclick/fastclick.js"></script>
+<script src="./assets/plugins/bootstrap-tagsinput-latest/bootstrap-tagsinput.js"></script>
+<script src="./assets/plugins/iCheck/icheck.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.iCheckSelector').iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            radioClass: 'iradio_square-blue',
+            increaseArea: '20%' // optional
+        });
+
+        $('.tagsInputSelector').tagsinput({
+            maxTags: 10,
+            maxChars: 255,
+            cancelConfirmKeysOnEmpty: false
+        });
+    });
+</script>
+<script src="./assets/js/app.min.js"></script>
+
+</body>
+</html>

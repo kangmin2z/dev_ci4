@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>CodeIgniter4 코딩 공작소</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <link rel="icon" href="./assets/img/favicon.ico" />
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/plugins/font-awesome-4.5.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./assets/plugins/ionicons-2.0.1/css/ionicons.min.css" />
+    <link rel="stylesheet" href="./assets/css/AdminLTE.min.css" />
+    <link rel="stylesheet" href="./assets/css/skins/_all-skins.min.css" />
+    <link rel="stylesheet" href="./assets/plugins/bootstrap-tagsinput-latest/bootstrap-tagsinput.css" />
+    <link rel="stylesheet" href="./assets/plugins/iCheck/square/blue.css" />
+	<script src="./assets/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="./assets/js/html5shiv.min.js"></script>
+    <script src="./assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<!-- 콘텐츠 -->
+
+<body class="hold-transition register-page">
+<div class="register-box">
+
+    <!-- 타이틀 -->
+    <div class="register-logo">
+        <b>CodeIgniter</b><span class="text-blue"><b>4</b></span>
+    </div>
+    <!-- // 타이틀 -->
+
+    <!-- 회원정보수정 -->
+    <div class="register-box-body">
+        <p class="login-box-msg">회원정보수정</p>
+
+        <!-- 폼 -->
+        <form action="" method="post">
+            <div class="form-group has-feedback">
+                <input type="email" class="form-control" placeholder="이메일 (ID)" value="ci4@gmail.com" readonly="readonly" />
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="text" class="form-control" placeholder="이름" value="CodeIgniter4" />
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="password" class="form-control" placeholder="비밀번호" />
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="password" class="form-control" placeholder="비밀번호 확인" />
+                <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+            </div>
+            <div class="row">
+                <div class="col-xs-4 pull-right">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">수정</button>
+                </div>
+            </div>
+        </form>
+        <!-- // 폼 -->
+
+        <a href="./note.html" class="text-center">돌아가기</a>
+    </div>
+    <!-- // 회원정보수정 -->
+</div>
+
+<!-- // 콘텐츠 -->
+
+<script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="./assets/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<script src="./assets/plugins/fastclick/fastclick.js"></script>
+<script src="./assets/plugins/bootstrap-tagsinput-latest/bootstrap-tagsinput.js"></script>
+<script src="./assets/plugins/iCheck/icheck.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.iCheckSelector').iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            radioClass: 'iradio_square-blue',
+            increaseArea: '20%' // optional
+        });
+
+        $('.tagsInputSelector').tagsinput({
+            maxTags: 10,
+            maxChars: 255,
+            cancelConfirmKeysOnEmpty: false
+        });
+    });
+</script>
+<script src="./assets/js/app.min.js"></script>
+
+</body>
+</html>
